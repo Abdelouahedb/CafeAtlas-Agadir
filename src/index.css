@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #8B5E3C;
+  --color-primary-dark: #6D4A2E;
+  --color-primary-light: #C9A882;
+  --color-secondary: #2C1810;
+  --color-secondary-light: #3D2A1E;
+  --color-cream: #F5E9DA;
+  --color-warm-gray: #F0E6D9;
+  --color-dark: #1C1210;
+  --color-gold: #C89B3C;
+  --color-gold-light: #D4AF5A;
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--color-dark);
+    background-color: #FFFCF8;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.01em;
+  }
+
+  p {
+    letter-spacing: 0.01em;
+    line-height: 1.75;
+  }
+}
+
+@layer utilities {
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #C89B3C, #D4AF5A, #C89B3C);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
+  .divider-gold {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #C89B3C, transparent);
+  }
+
+  /* Prevent layout shift from scrollbar */
+  .stable-scrollbar {
+    scrollbar-gutter: stable;
+  }
+}
+
+/* Smooth touch interactions */
+@media (hover: none) {
+  button, a {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
